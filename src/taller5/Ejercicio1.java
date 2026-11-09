@@ -23,6 +23,8 @@ public class Ejercicio1 {
         return monto + calcularPropina(monto, porcentaje);
     }
 
+
+
     public static void main(String[] args) {
         try {
         // TODO:
@@ -51,6 +53,5 @@ public class Ejercicio1 {
             JOptionPane.showMessageDialog(null, "Error: Por favor ingrese un número válido.");
         }
     }
-}
-        
+}       
            
