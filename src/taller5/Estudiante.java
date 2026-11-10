@@ -1,32 +1,70 @@
 package taller5;
 
-/**
- * Clase Estudiante
- *
- * El autograde invoca por reflexión:
- *   constructor Estudiante(String nombre, int edad, double nota1, double nota2, double nota3)
- *   metodo getPromedio()
- *
- * Requisitos:
- *  - atributos private
- *  - constructor
- *  - getters y setters (métodos de seguridad)
- */
 public class Estudiante {
 
-    // TODO: declarar atributos private:
-    //   String nombre
-    //   int edad
-    //   double nota1, nota2, nota3
+    // Atributos privados
+    private String nombre;
+    private int edad;
+    private double nota1;
+    private double nota2;
+    private double nota3;
 
+    // Constructor
     public Estudiante(String nombre, int edad, double nota1, double nota2, double nota3) {
-        // TODO: asignar los parámetros a los atributos con this.
+        this.nombre = nombre;
+        this.edad = edad;
+        this.nota1 = nota1;
+        this.nota2 = nota2;
+        this.nota3 = nota3;
     }
 
-    // TODO: getters y setters para nombre, edad, nota1, nota2, nota3
+    // Getter y setter de nombre
+    public String getNombre() {
+        return nombre;
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    // Getter y setter de edad
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    // Getter y setter de nota1
+    public double getNota1() {
+        return nota1;
+    }
+
+    public void setNota1(double nota1) {
+        this.nota1 = nota1;
+    }
+
+    // Getter y setter de nota2
+    public double getNota2() {
+        return nota2;
+    }
+
+    public void setNota2(double nota2) {
+        this.nota2 = nota2;
+    }
+
+    // Getter y setter de nota3
+    public double getNota3() {
+        return nota3;
+    }
+
+    public void setNota3(double nota3) {
+        this.nota3 = nota3;
+    }
+
+    // Calcular promedio
     public double getPromedio() {
-        // TODO: retornar (nota1 + nota2 + nota3) / 3.0
-        return 0.0;
+        return (nota1 + nota2 + nota3) / 3.0;
     }
 }

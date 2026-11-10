@@ -5,24 +5,54 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 
-/**
- * Ejercicio 5 - Clase Estudiante + JOptionPane + BufferedReader
- *
- * El main usa la clase Estudiante (Ejercicio5 combina ambas formas de E/S):
- *  - nombre y edad con JOptionPane
- *  - notas con BufferedReader
- */
 public class Ejercicio5 {
 
     public static void main(String[] args) throws IOException {
-        // TODO:
-        // 1. Pedir nombre con JOptionPane.showInputDialog
-        // 2. Pedir edad con JOptionPane.showInputDialog + Integer.parseInt
-        // 3. Leer tres notas con BufferedReader + Double.parseDouble
-        // 4. Crear objeto Estudiante con el constructor
-        // 5. Mostrar con JOptionPane.showMessageDialog EXACTO:
-        //      Nombre: [nombre]
-        //      Edad: [edad]
-        //      Promedio: X.XX
+
+        // Pedir nombre
+        String nombre = JOptionPane.showInputDialog(
+            "Ingrese el nombre del estudiante:"
+        );
+
+        // Pedir edad
+        String entradaEdad = JOptionPane.showInputDialog(
+            "Ingrese la edad del estudiante:"
+        );
+
+        int edad = Integer.parseInt(entradaEdad);
+
+        // Crear BufferedReader
+        BufferedReader br = new BufferedReader(
+            new InputStreamReader(System.in)
+        );
+
+        // Pedir las tres notas
+        System.out.println("Ingrese la primera nota:");
+        double nota1 = Double.parseDouble(br.readLine());
+
+        System.out.println("Ingrese la segunda nota:");
+        double nota2 = Double.parseDouble(br.readLine());
+
+        System.out.println("Ingrese la tercera nota:");
+        double nota3 = Double.parseDouble(br.readLine());
+
+        // Crear objeto Estudiante
+        Estudiante estudiante = new Estudiante(
+            nombre, edad, nota1, nota2, nota3
+        );
+
+        // Obtener promedio
+        double promedio = estudiante.getPromedio();
+
+        // Mostrar resultado
+        JOptionPane.showMessageDialog(
+            null,
+            String.format(
+                "Nombre: %s\nEdad: %d\nPromedio: %.2f",
+                nombre,
+                edad,
+                promedio
+            )
+        );
     }
 }
