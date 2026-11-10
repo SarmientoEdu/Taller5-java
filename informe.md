@@ -1,12 +1,13 @@
-# Informe — Taller #5 Programación 1
+# Informe — Taller #5
 
-**Nombre completo:** [Escribe tu nombre aquí]
-**Cédula:** [Escribe tu cédula, ej: 8-123-4567]
-**Semilla (últimos 3 dígitos):** [ej: 567]
-**Rama de trabajo:** lab10-[apellido]-[nombre]
-**Fecha:** [YYYY-MM-DD]
+**Nombre completo:** Angel Diaz
+**Cédula:** 8-1047-925
+**Semilla (últimos 3 dígitos):** 925
+**Rama:** lab10-diaz-angel
+**Fecha:** 2026-11-09
 
-## Reflexión breve (máximo 5 líneas)
+## Reflexión (máximo 5 líneas)
 
-[Explica qué aprendiste sobre JOptionPane, BufferedReader y el flujo de Git/GitHub
-en este taller. No copies de otros compañeros.]
+Aprendí a usar JOptionPane para pedir y mostrar datos con ventanas, y BufferedReader
+para leer varios valores desde la consola. También practiqué la creación de objetos,
+el uso de métodos con fórmulas y el flujo de trabajo con ramas y commits en Git/GitHub.
