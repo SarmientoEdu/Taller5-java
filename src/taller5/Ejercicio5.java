@@ -7,22 +7,29 @@ import java.io.IOException;
 
 /**
  * Ejercicio 5 - Clase Estudiante + JOptionPane + BufferedReader
- *
- * El main usa la clase Estudiante (Ejercicio5 combina ambas formas de E/S):
- *  - nombre y edad con JOptionPane
- *  - notas con BufferedReader
  */
 public class Ejercicio5 {
 
     public static void main(String[] args) throws IOException {
-        // TODO:
-        // 1. Pedir nombre con JOptionPane.showInputDialog
-        // 2. Pedir edad con JOptionPane.showInputDialog + Integer.parseInt
-        // 3. Leer tres notas con BufferedReader + Double.parseDouble
-        // 4. Crear objeto Estudiante con el constructor
-        // 5. Mostrar con JOptionPane.showMessageDialog EXACTO:
-        //      Nombre: [nombre]
-        //      Edad: [edad]
-        //      Promedio: X.XX
+        // nombre y edad por ventana
+        String nombre = JOptionPane.showInputDialog("Nombre del estudiante:");
+        int edad = Integer.parseInt(JOptionPane.showInputDialog("Edad:"));
+
+        // las notas por consola
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Nota 1: ");
+        double nota1 = Double.parseDouble(br.readLine());
+        System.out.print("Nota 2: ");
+        double nota2 = Double.parseDouble(br.readLine());
+        System.out.print("Nota 3: ");
+        double nota3 = Double.parseDouble(br.readLine());
+
+        Estudiante est = new Estudiante(nombre, edad, nota1, nota2, nota3);
+
+        String resumen = "Nombre: " + est.getNombre() + "\n"
+                + "Edad: " + est.getEdad() + "\n"
+                + String.format("Promedio: %.2f", est.getPromedio());
+
+        JOptionPane.showMessageDialog(null, resumen);
     }
 }
