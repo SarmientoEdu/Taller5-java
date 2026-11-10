@@ -1,6 +1,7 @@
 package taller5;
 
 import javax.swing.JOptionPane;
+import java.util.Locale;
 
 /**
  * Ejercicio 1 - Calculadora de propina (JOptionPane)
@@ -14,23 +15,30 @@ import javax.swing.JOptionPane;
 public class Ejercicio1 {
 
     public static double calcularPropina(double monto, double porcentaje) {
-        // TODO: retornar la propina = monto * porcentaje / 100
-        return 0.0;
+        return monto * porcentaje / 100.0;
     }
 
     public static double calcularTotal(double monto, double porcentaje) {
-        // TODO: retornar monto + propina
-        return 0.0;
+        return monto + calcularPropina(monto, porcentaje);
     }
 
     public static void main(String[] args) {
-        // TODO:
-        // 1. Pedir monto con JOptionPane.showInputDialog
-        // 2. Pedir porcentaje con JOptionPane.showInputDialog
-        // 3. Convertir con Double.parseDouble
-        // 4. Calcular con los métodos de arriba
-        // 5. Mostrar con JOptionPane.showMessageDialog el formato EXACTO:
-        //      Propina: $X.XX
-        //      Total: $Y.YY
+        String textoMonto = JOptionPane.showInputDialog(null, "Ingrese el monto de la cuenta:");
+        if (textoMonto == null) {
+            return;
+        }
+        String textoPorcentaje = JOptionPane.showInputDialog(null, "Ingrese el porcentaje de propina:");
+        if (textoPorcentaje == null) {
+            return;
+        }
+
+        double monto = Double.parseDouble(textoMonto);
+        double porcentaje = Double.parseDouble(textoPorcentaje);
+
+        double propina = calcularPropina(monto, porcentaje);
+        double total = calcularTotal(monto, porcentaje);
+
+        String mensaje = String.format(Locale.US, "Propina: $%.2f%nTotal: $%.2f", propina, total);
+        JOptionPane.showMessageDialog(null, mensaje);
     }
 }
