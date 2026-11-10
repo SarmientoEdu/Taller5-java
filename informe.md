@@ -1,7 +1,7 @@
 # Informe — Taller #5
 
 **Nombre completo:** Angel Diaz
-**Cédula:** 8-1047-925
+**Cédula: 8-1047-925**
 **Semilla (últimos 3 dígitos):** 925
 **Rama:** lab10-diaz-angel
 **Fecha:** 2026-11-09
