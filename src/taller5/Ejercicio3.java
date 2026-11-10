@@ -1,6 +1,7 @@
 package taller5;
 
 import javax.swing.JOptionPane;
+import java.util.Locale;
 
 /**
  * Ejercicio 3 - Área y perímetro de un rectángulo (JOptionPane)
@@ -12,20 +13,30 @@ import javax.swing.JOptionPane;
 public class Ejercicio3 {
 
     public static double calcularArea(double base, double altura) {
-        // TODO: retornar base * altura
-        return 0.0;
+        return base * altura;
     }
 
     public static double calcularPerimetro(double base, double altura) {
-        // TODO: retornar 2 * (base + altura)
-        return 0.0;
+        return 2 * (base + altura);
     }
 
     public static void main(String[] args) {
-        // TODO:
-        // 1. Pedir base y altura con JOptionPane.showInputDialog
-        // 2. Mostrar con JOptionPane.showMessageDialog EXACTO:
-        //      Área: X.XX
-        //      Perímetro: Y.YY
+        String textoBase = JOptionPane.showInputDialog(null, "Ingrese la base del rectángulo:");
+        if (textoBase == null) {
+            return;
+        }
+        String textoAltura = JOptionPane.showInputDialog(null, "Ingrese la altura del rectángulo:");
+        if (textoAltura == null) {
+            return;
+        }
+
+        double base = Double.parseDouble(textoBase);
+        double altura = Double.parseDouble(textoAltura);
+
+        double area = calcularArea(base, altura);
+        double perimetro = calcularPerimetro(base, altura);
+
+        String mensaje = String.format(Locale.US, "Área: %.2f%nPerímetro: %.2f", area, perimetro);
+        JOptionPane.showMessageDialog(null, mensaje);
     }
 }
